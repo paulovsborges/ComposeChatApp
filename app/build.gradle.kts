@@ -78,7 +78,6 @@ dependencies {
     implementation(KotlinX.serialization)
 
     implementation(Hilt.android)
-    implementation(Hilt.viewModel)
     implementation(Hilt.compose)
     kapt(Hilt.kaptCompiler)
     kapt(Hilt.kaptAndroidCompile)
