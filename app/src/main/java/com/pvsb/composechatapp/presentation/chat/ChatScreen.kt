@@ -133,6 +133,8 @@ fun ChatScreen(
                         Text(text = message.time, color = Color.White, modifier = Modifier.align(Alignment.End))
                     }
                 }
+
+                Spacer(modifier = Modifier.height(32.dp))
             }
         }
 
