@@ -12,6 +12,6 @@ interface MessageService {
     }
 
     sealed class Endpoints(val url: String){
-        object GetAllMessages: Endpoints("$BASE_URL/messages")
+        object GetAllMessages: Endpoints("$MY_IP_BASE_URL/messages")
     }
 }

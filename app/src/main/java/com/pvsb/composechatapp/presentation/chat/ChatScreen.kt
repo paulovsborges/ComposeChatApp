@@ -35,8 +35,6 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
-import com.pvsb.composechatapp.presentation.username.UserNameViewModel
-import com.pvsb.composechatapp.ui.theme.Shapes
 import kotlinx.coroutines.flow.collectLatest
 
 @Composable
@@ -50,7 +48,6 @@ fun ChatScreen(
     LaunchedEffect(key1 = true) {
         viewModel.toastEvent.collectLatest { message ->
             Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
-
         }
     }
 
@@ -61,13 +58,11 @@ fun ChatScreen(
             when (event) {
                 Lifecycle.Event.ON_START -> {
                     viewModel.initChat()
-
                 }
                 Lifecycle.Event.ON_STOP -> {
                     viewModel.disconnect()
                 }
             }
-
         }
 
         lifeCycleOwner.lifecycle.addObserver(observer)
@@ -131,14 +126,12 @@ fun ChatScreen(
                             )
                             .padding(8.dp)
                     ) {
-                        Text(text = userName, fontWeight = FontWeight.Bold)
+                        Text(text = message.userName, fontWeight = FontWeight.Bold)
 
                         Text(text = message.text, color = Color.White)
 
                         Text(text = message.time, color = Color.White, modifier = Modifier.align(Alignment.End))
                     }
-
-
                 }
             }
         }
